@@ -3,13 +3,13 @@ package com.kcsajan.main.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "Student")
+@Document(collection = "student")
 public class Student {
 
 	@Id
-	private Integer id;
+	private long id;
 
-	private Integer rollNo;
+	private int rollNo;
 
 	private String fname;
 
@@ -21,14 +21,14 @@ public class Student {
 
 	private String email;
 
-	private Long phone;
+	private long phone;
 
 	public Student() {
-
+		super();
 	}
 
-	public Student(Integer id, Integer rollNo, String fname, String lname, String address, Gender gender, String email,
-			Long phone) {
+	public Student(long id, int rollNo, String fname, String lname, String address, Gender gender, String email,
+			long phone) {
 		super();
 		this.id = id;
 		this.rollNo = rollNo;
@@ -40,11 +40,19 @@ public class Student {
 		this.phone = phone;
 	}
 
-	public Integer getRollNo() {
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public int getRollNo() {
 		return rollNo;
 	}
 
-	public void setRollNo(Integer rollNo) {
+	public void setRollNo(int rollNo) {
 		this.rollNo = rollNo;
 	}
 
@@ -88,18 +96,12 @@ public class Student {
 		this.email = email;
 	}
 
-	public Long getPhone() {
+	public long getPhone() {
 		return phone;
 	}
 
-	public void setPhone(Long phone) {
+	public void setPhone(long phone) {
 		this.phone = phone;
-	}
-
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", rollNo=" + rollNo + ", fname=" + fname + ", lname=" + lname + ", address="
-				+ address + ", gender=" + gender + ", email=" + email + ", phone=" + phone + "]";
 	}
 
 }
