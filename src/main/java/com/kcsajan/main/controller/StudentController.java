@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kcsajan.main.model.Student;
 import com.kcsajan.main.repository.StudentRepository;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class StudentController {
 
@@ -47,7 +49,7 @@ public class StudentController {
 //	}
 
 	@DeleteMapping(value = "/student/{id}")
-	public String deleteBook(@PathVariable long id) {
+	public String deleteStudent(@PathVariable long id) {
 		studentRepository.deleteById(id);
 		return "Student With id : " + id + " Deleted From Database.";
 	}

@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Student {
 
 	@Id
-	private long id;
+	private long _id;
 
 	private int rollNo;
 
@@ -17,7 +17,7 @@ public class Student {
 
 	private String address;
 
-	private Gender gender;
+	private String gender;
 
 	private String email;
 
@@ -27,10 +27,10 @@ public class Student {
 		super();
 	}
 
-	public Student(long id, int rollNo, String fname, String lname, String address, Gender gender, String email,
+	public Student(long _id, int rollNo, String fname, String lname, String address, String gender, String email,
 			long phone) {
 		super();
-		this.id = id;
+		this._id = _id;
 		this.rollNo = rollNo;
 		this.fname = fname;
 		this.lname = lname;
@@ -41,11 +41,11 @@ public class Student {
 	}
 
 	public long getId() {
-		return id;
+		return _id;
 	}
 
 	public void setId(long id) {
-		this.id = id;
+		this._id = id;
 	}
 
 	public int getRollNo() {
@@ -80,11 +80,11 @@ public class Student {
 		this.address = address;
 	}
 
-	public Gender getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(Gender gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
